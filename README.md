@@ -36,7 +36,7 @@ eKart/
 
 ## 🧰 Tech Stack
 
-- **Language:** Java 17+
+- **Language:** Java 24+
 - **Build:** Maven
 - **Frameworks:** Spring Boot 3.x, Spring Web, Spring Data JPA
 - **Cloud:** Spring Cloud (Gateway, Eureka, OpenFeign)
@@ -47,29 +47,39 @@ eKart/
 
 ## 🏗️ Architecture
 
-```mermaid
-## 🏗️ Architecture
-
-```mermaid
-flowchart LR
-  Client[(Client)] -->|HTTPS/REST| APIGW[API Gateway]
-
-  subgraph Discovery
-    ES[Eureka Server (8761)]
-  end
-
-  APIGW -->|/api/products/**| P[Product Service]
-  APIGW -->|/api/users/**| U[User Service]
-
-  P <-->|OpenFeign| U
-
-  P <--> DB1[(DB: PostgreSQL/H2)]
-  U <--> DB2[(DB: PostgreSQL/H2)]
-
-  APIGW --- ES
-  P --- ES
-  U --- ES
 ```
+            +-------------------+
+            |      Client       |
+            +-------------------+
+                     |
+                     v
+            +-------------------+
+            |   API Gateway     |  (Port 8080)
+            +-------------------+
+               /                           /                            v                 v
+ +-------------------+   +-------------------+
+ |  Product Service  |   |   User Service    |
+ |   (Port 8081)     |   |   (Port 8082)     |
+ +-------------------+   +-------------------+
+        |                       |
+        v                       v
++---------------+        +---------------+
+| Product  DB   |        |   User  DB    |
+| PostgreSQL    |        | PostgreSQL    |
++---------------+        +---------------+
+
+    ^         ^
+    |         |
+    +----+----+
+         |
+         v
++-------------------+
+|  Eureka Server    | (Port 8761)
+| Service Discovery |
++-------------------+
+```
+
+---
 
 ---
 
