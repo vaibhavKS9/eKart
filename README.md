@@ -1,6 +1,6 @@
 # eKart — Spring Cloud Microservices E-Commerce
 
-[![Java](https://img.shields.io/badge/Java-17%2B-blue)]()
+[![Java](https://img.shields.io/badge/Java-24%2B-blue)]()
 [![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.x-brightgreen)]()
 [![Spring Cloud](https://img.shields.io/badge/Spring%20Cloud-202x--x-success)]()
 [![Maven](https://img.shields.io/badge/Maven-3.x-orange)]()
