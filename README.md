@@ -48,23 +48,27 @@ eKart/
 ## 🏗️ Architecture
 
 ```mermaid
-flowchart LR
-  Client((Client)) --> |HTTPS/REST| APIGW[API Gateway]
+## 🏗️ Architecture
 
-  subgraph Discovery[Eureka Server (8761)]
+```mermaid
+flowchart LR
+  Client[(Client)] -->|HTTPS/REST| APIGW[API Gateway]
+
+  subgraph Discovery
+    ES[Eureka Server (8761)]
   end
 
-  APIGW --> |/api/products/**| P[Product Service]
-  APIGW --> |/api/users/**| U[User Service]
+  APIGW -->|/api/products/**| P[Product Service]
+  APIGW -->|/api/users/**| U[User Service]
 
-  P <-- OpenFeign --> U
+  P <-->|OpenFeign| U
 
-  P <--> DB1[(DB: PostgreSQL)]
-  U <--> DB2[(DB: PostgreSQL)]
+  P <--> DB1[(DB: PostgreSQL/H2)]
+  U <--> DB2[(DB: PostgreSQL/H2)]
 
-  P --- Discovery
-  U --- Discovery
-  APIGW --- Discovery
+  APIGW --- ES
+  P --- ES
+  U --- ES
 ```
 
 ---
