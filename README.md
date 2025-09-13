@@ -4,9 +4,8 @@
 [![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.x-brightgreen)]()
 [![Spring Cloud](https://img.shields.io/badge/Spring%20Cloud-202x--x-success)]()
 [![Maven](https://img.shields.io/badge/Maven-3.x-orange)]()
-[![License](https://img.shields.io/badge/License-MIT-lightgrey)]()
 
-A modular, cloud-native **e-commerce backend** built with **Spring Boot** and **Spring Cloud**. It demonstrates production-style patterns—**API Gateway**, **Service Discovery** (Eureka), **declarative inter-service calls** (OpenFeign), **centralized configuration** (Config Server), and **validation**—with clean separation of concerns.
+A modular, cloud-native **e-commerce backend** built with **Spring Boot** and **Spring Cloud**. It demonstrates production-style patterns—**API Gateway**, **Service Discovery** (Eureka), **declarative inter-service calls** (OpenFeign) and **validation**—with clean separation of concerns.
 
 ---
 
